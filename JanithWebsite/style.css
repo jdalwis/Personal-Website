@@ -1,0 +1,790 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background-color: #000;
+  color: #0f0;
+}
+
+/* Building the Terminal Screen */
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  padding: 2%; /* This adds space around the terminal, adjust as necessary */
+  box-sizing: border-box; /* Includes padding in the height and width */
+  overflow: hidden; /* Prevents scrolling */
+}
+
+.terminal {
+  background-color: #1d1c1c;
+  border: 2px solid #6f6f6f;
+  border-radius: 10px;
+  position: relative; /* or 'absolute' if you prefer it to be positioned over a background */
+  width: 1100px; /* 100% - 2% padding on each side */
+  height: 900px; /* 100vh - 2% padding on each side */
+  box-sizing: border-box; /* Includes padding and border in the height and width */
+  overflow: hidden; /* Ensures no internal scrolling */
+  /* Add max-width and max-height if needed */
+  max-height: 650px; /* Maximum height you want */
+}
+
+.sidebar {
+  background-color: #1a1a1a;
+  border-radius: 10px 0px 10px 10px;
+  position: absolute;
+  width: 0;
+  height: auto !important;
+  min-height: 100%;
+  flex-grow: 1;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease-in-out;
+  padding-top: 60px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Building the Navigation Menu (Sidebar) */
+.tab {
+  background-color: #1d1c1c;
+  border: 1px solid #303030;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 9%;
+}
+
+.techtitle {
+  background-color: #292729;
+  border-bottom: 1px solid gray;
+  border-radius: 20px 20px 0px 0px;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 97%;
+  height: 70%;
+  align-items: center;
+  text-align: left;
+  padding-left: 10px;
+  color: #6cef55;
+  font-family: "Trebuchet MS", monospace;
+  font-size: 1vw;
+  letter-spacing: 0.12rem;
+  overflow: hidden;
+}
+
+.techtitle .closebtn {
+  color: #6cef55;
+  position: absolute;
+  display: flex;
+  width: 1vw;
+  height: 1vw;
+  align-items: center;
+  text-align: center;
+  right: 5px;
+  opacity: 0.8;
+}
+
+.techtitle .closebtn:hover {
+  color: #6cef55;
+  position: absolute;
+  display: flex;
+  width: 1vw;
+  height: 1vw;
+  align-items: center;
+  text-align: center;
+  right: 5px;
+  opacity: 1;
+}
+
+.menu {
+  background-color: #292729;
+  border-right: 1px solid #303030;
+  border-top: 2px solid #303030;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 91%;
+}
+
+.listimg_folder {
+  list-style-type: none;
+  background-image: url("images/icons8-folder-24.png");
+  background-repeat: no-repeat;
+}
+
+.menufolder {
+  color: #6cef55 !important;
+  font-family: "Trebuchet MS", monospace;
+  font-size: 2vh !important;
+  text-decoration: none;
+}
+
+.listimg_page {
+  list-style-type: none;
+  background-image: url("images/icons8-overview-24.png");
+  background-repeat: no-repeat;
+}
+
+.menupage {
+  color: #6cef55 !important;
+  font-family: "Trebuchet MS", monospace;
+  font-size: 1.8vh !important;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.menupage:hover {
+  color: #6cef55 !important;
+  font-family: "Trebuchet MS", monospace;
+  font-size: 1.8vh !important;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Building the Main Page */
+
+.toppanel {
+  background: #1d1c1c;
+  border-bottom: 2px solid #303030;
+  position: absolute;
+  height: auto !important;
+  min-height: 10%;
+  width: auto !important;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.openbtn {
+  background: #292729;
+  border: 1px solid #303030;
+  border-radius: 20px 20px 0px 0px;
+  height: 70%; /* You might want to specify a fixed height instead of a percentage */
+  width: 55px; /* Fixed width */
+  left: 2.17%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset by half of the button's width */
+  bottom: 0; /* Position at the bottom */
+  color: #6cef55;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Align text horizontally */
+  font-size: 3vw;
+  cursor: pointer;
+  padding: 6.5px; /* Adjust padding if necessary */
+  z-index: 999;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.landingpage {
+  background: #1a1a1a;
+  border-top: 1px solid #303030;
+  position: absolute;
+  height: auto !important;
+  min-height: 90%;
+  width: auto !important;
+  min-width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#main {
+  transition: margin-left 0.5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* Non-functional Options to Close, Enlarge, or Minimize the Terminal (Left Corner)*/
+.options {
+  position: absolute;
+  height: auto !important;
+  min-height: 100%;
+  width: auto !important;
+  min-width: 70%;
+  bottom: 0;
+  text-align: left;
+  right: 0;
+}
+
+.button-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+  right: 10px;
+}
+
+.minimize-button,
+.enlarge-button,
+.close-button2 {
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #1a1a1a;
+  color: #6cef55;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.minimize-button,
+.enlarge-button,
+.close-button2 span {
+  font-weight: bold;
+}
+
+.minimize-button:hover,
+.enlarge-button:hover,
+.close-button2:hover span {
+  transform: scale(1.1);
+}
+
+/* Social Media Icons*/
+
+.socials {
+  border-top: 1px solid #6cef55;
+  width: 100%;
+  position: absolute;
+  bottom: 13%;
+  padding-top: 10px;
+}
+
+.socials a {
+  bottom: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0px 7px 0px -7px;
+}
+
+.socialbox {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  left: -5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials i {
+  display: inline-block;
+  border: 1px solid #6cef55;
+  border-radius: 5px;
+  padding: 5px;
+  color: #6cef55;
+}
+
+.socials i:hover {
+  display: inline-block;
+  background: #6cef55;
+  border: 1px solid #6cef55;
+  border-radius: 5px;
+  padding: 5px;
+  color: #000000;
+  transform: scale(1.1);
+}
+
+.code-block {
+  position: absolute;
+  display: flex;
+  background: #1d1c1c;
+  border-top: 1px solid #303030;
+  height: 90%;
+  width: 100%;
+  bottom: 0;
+  counter-reset: linenumber;
+  color: #6cef55;
+  overflow-y: scroll;
+  border-spacing: 10px;
+  overflow-x: hidden;
+}
+
+.code-block code {
+  display: table;
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: "Trebuchet MS", monospace;
+  /* margin-left: 20px; */
+}
+
+.code-block code:before {
+  counter-increment: linenumber 1;
+  content: counter(linenumber);
+  margin-right: 10px;
+  width: 0.5em;
+  text-align: right;
+  color: gray;
+  font-size: 1vw;
+  font-family: "Trebuchet MS", monospace;
+  text-align: right;
+  justify-content: right;
+  align-items: right;
+}
+
+/* Formatting Buttons for Landing Page */
+.pagebutton {
+  background: #1a1a1a;
+  border: 1px solid #6cef55;
+  border-radius: 10px;
+  color: #6cef55;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 8px;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1vw;
+  font-family: "Trebuchet MS", monospace;
+  cursor: pointer;
+}
+
+.pagebutton:hover {
+  background-color: #6cef55;
+  border: 1px solid #6cef55; /* Green */
+  color: #000;
+  opacity: 0.8;
+}
+
+/*Project, Certificate, and Blog Containers */
+.projectbox-container,
+.certbox-container,
+.blogbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100px;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.projboxes,
+.certboxes,
+.blogboxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #6cef55;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+  width: calc(80% / 3);
+  white-space: nowrap;
+  min-height: 100px;
+  cursor: pointer;
+  font-family: "Trebuchet MS", monospace;
+  font-size: 14.5px;
+}
+
+.projboxes span,
+.certboxes span,
+.blogboxes span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.projboxes:hover,
+.certboxes:hover,
+.blogboxes:hover {
+  min-height: 100px;
+  background-color: #6cef55;
+  border: 1px solid #6cef55;
+  border-radius: 10px;
+  color: #000;
+  text-decoration: none;
+  font-family: "Trebuchet MS", monospace;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.certboxes img {
+  max-width: 100%;
+  height: 70px;
+  width: 70px;
+  margin-top: 13px;
+}
+
+.certboxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*
+  .certboxes:hover img {
+    display: none; 
+    justify-content: center;
+  
+  }
+  
+  #cert1:hover:before {
+    padding-top: 100px; 
+    color: #000000;
+    content:"SC-900";
+    
+  }
+  
+  
+  
+  #cert2:hover:before {
+    content:"Google Cybersecurity Professional";
+  }
+  
+  #cert3:hover:before {
+    content:"AWS CCP";
+  }
+  */
+
+.blog-button-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* This will prevent scrolling on the entire page */
+  height: 100%; /* Sets the body to the full height of the viewport */
+  width: 100%; /* Sets the body to the full width of the viewport */
+}
+
+.logo-container {
+  padding-top: 150px;
+  padding-left: 980px;
+  z-index: 999;
+  text-align: center;
+
+  position: fixed; /* Fixed position relative to the viewport */
+  right: 240px; /* Adjust the value to give some space from the right edge of the viewport */
+  bottom: 86px; /* Adjust the value to give some space from the bottom edge of the viewport */
+}
+
+#logo {
+  max-width: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+.iconsContainer {
+  margin-left: 15px;
+  width: 1vw;
+}
+
+/* Building Responsive Laeyouts */
+@media (min-width: 1800px) {
+  .parent-container {
+    display: flex;
+    height: auto;
+    overflow-y: hidden !important;
+  }
+
+  .terminal {
+    background-color: #1a1a1a;
+    border: 2px solid #6f6f6f;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1300px;
+
+    min-height: 800px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socials {
+    border-top: 1px solid #6cef55;
+    width: 100%;
+    position: absolute;
+    bottom: 13%;
+    padding-top: 10px;
+  }
+
+  .socials a {
+    bottom: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0px 7px -14px -7px;
+  }
+
+  .socialbox {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    left: -5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .socials i {
+    display: inline-block;
+    border: 1px solid #6cef55;
+    border-radius: 5px;
+    padding: 5px;
+    color: #6cef55;
+  }
+
+  .socials i:hover {
+    display: inline-block;
+    background: #6cef55;
+    border: 1px solid #6cef55;
+    border-radius: 5px;
+    padding: 5px;
+    color: #000000;
+    transform: scale(1.1);
+  }
+}
+
+.hidden {
+  overflow-x: hidden;
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .techtitle {
+    font-size: 3vw;
+  }
+  .mobile-res-font {
+    font-size: 3.3vw !important;
+  }
+  .projboxes,
+  .certboxes,
+  .blogboxes {
+    width: calc(90% / 1);
+  }
+  .projboxes span,
+  .certboxes span,
+  .blogboxes span {
+    font-size: 12px;
+  }
+  .green-txt-font {
+    font-size: 2.9vw !important;
+  }
+  .openbtn {
+    font-size: 6vw;
+  }
+  .iconsContainer {
+    margin-left: 15px;
+    width: 3vw;
+  }
+}
+
+/* Preloader */
+#preloader {
+  background: #040204 url(images/loader.gif) no-repeat center center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.preloader-hidden {
+  display: none;
+}
+
+.download-container {
+  margin-top: 50px;
+}
+
+.loading {
+  display: none;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #6cef55;
+}
+
+/* ... existing styles ... */
+
+/* Adjust the sidebar to have a fixed width when opened */
+.sidebar.open {
+  width: 250px; /* Adjust the width as needed */
+}
+
+/* Use flexbox to position items in your main content area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Style for the title and download button container */
+.resume-section {
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin as needed */
+}
+
+/* Style for the download button */
+.download-btn {
+  background: #6cef55;
+  color: #000;
+  padding: 10px 20px;
+  margin-top: 20px; /* Space between the text and the button */
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #6cef55;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 37px;
+  margin-top: 0px;
+  margin-bottom: 13px;
+  border-radius: 10px;
+}
+
+.download-btn:hover {
+  background-color: rgb(71, 70, 70);
+  color: #6cef55;
+}
+
+/* Style for the generate button */
+.generate-btn {
+  background: #6cef55;
+  color: #000;
+  padding: 10px 20px;
+  margin-top: 20px; /* Space between the text and the button */
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #6cef55;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Trebuchet MS", monospace;
+  position: absolute;
+  margin-bottom: 100px;
+}
+
+.generate-btn:hover {
+  background-color: rgb(71, 70, 70);
+  color: #6cef55;
+}
+
+#interactive-terminal {
+  background: #000;
+  color: #6cef55;
+  padding: 20px;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap; /* Maintains text formatting */
+}
+
+#interactive-terminal input {
+  background: transparent;
+  border: none;
+  color: #6cef55;
+  font-family: "Courier New", monospace;
+}
+
+#interactive-terminal input:focus {
+  outline: none;
+}
+
+body {
+  background-color: black;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
+}
+
+/* Apply this class to the "success" message only */
+.success-message {
+  color: #6cef55; /* Green color, like terminal text */
+  display: inline; /* or 'inline-block' */
+}
+
+h2 {
+  font-size: 30px;
+  position: absolute;
+  display: absolute;
+  align-items: center;
+  text-align: left;
+  color: #6cef55;
+  font-family: "Trebuchet MS", monospace;
+  letter-spacing: 0.12rem;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding-bottom: 200px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: auto; /* This will push the footer to the bottom of the terminal */
+}
