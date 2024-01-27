@@ -1,7 +1,5 @@
-// Add event listener for scroll event
 window.addEventListener("scroll", setActiveLink);
 
-// Add event listener for click event on menu links
 const menuLinks = document.querySelectorAll(".menu-link");
 menuLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -14,7 +12,6 @@ menuLinks.forEach((link) => {
   });
 });
 
-// Set active link in menu based on the section in the middle of the viewport
 function setActiveLink() {
   const sections = document.querySelectorAll("section");
   sections.forEach((section) => {
