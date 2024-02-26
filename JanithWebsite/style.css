@@ -4,8 +4,9 @@
 
 body {
   font-family: "Courier New", monospace;
-  background-color: #000;
-  color: #0f0;
+  background-color: #080404;
+  background-image: url("/images/WindowsXp.jpg");
+  background-size: cover;
 }
 
 /* Building the Terminal Screen */
@@ -32,6 +33,7 @@ body {
   overflow: hidden; /* Ensures no internal scrolling */
   /* Add max-width and max-height if needed */
   max-height: 650px; /* Maximum height you want */
+  box-shadow: 0 0 30px 12px #6cef55;
 }
 
 .sidebar {
@@ -606,8 +608,8 @@ body {
 }
 
 #preloader {
-  background: #040204 url(images/loader.gif) no-repeat center center;
-  background-size: 25%;
+  background: black url(images/loader.gif) no-repeat center center;
+  background-size: 100%;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -713,10 +715,6 @@ body {
 
 #interactive-terminal input:focus {
   outline: none;
-}
-
-body {
-  background-color: black;
 }
 
 @keyframes blink {
