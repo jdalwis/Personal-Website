@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+            <title>Janith's Terminal</title>
+            <link rel="shortcut icon" type="image/x-icon" href="images/main.ico" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="style.css">
+            
+</head>
+<body>
+<div id="myDiv"> 
+  <div id="preloader"></div> 
+    
+    <div class="parent-container">
+
+      
+    <div class="terminal" id="myDIV1">
+        <div id="mySidebar" class="sidebar">
+            <div class="tab">
+                <div class="techtitle"> janith.txt
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav('closeMenu')">×</a>
+                </div>
+                
+            </div>
+            <div class="menu">
+               
+                <ul style="list-style: none;">
+                    <li class="listimg_folder"><a href="#home" onclick="closeNav('menuItem')" class="menufolder">README</a></li>
+                        <ul>
+                            <li class="listimg_page"><a href="#about"  onclick="closeNav('menuItem')" class="menupage">ABOUT</a></li>
+                            <li class="listimg_page"><a href="#projects" onclick="closeNav('menuItem')"   class="menupage">PROJECTS</a></li>
+                            <li class="listimg_page"><a href="#research"  onclick="closeNav('menuItem')"  class="menupage">RESEARCH</a></li>
+                            <li class="listimg_page"><a href="#certificates"  onclick="closeNav('menuItem')"  class="menupage">CERTIFICATES</a></li>
+                            <li class="listimg_page"><a href="#blog" onclick="closeNav('menuItem')" class="menupage" >BLOG</a></li>
+                            <li class="listimg_page"><a href="#resume" onclick="closeNav('menuItem')" class="menupage" >RESUME</a></li>
+                        </ul>
+                </ul>
+                
+               <div class="socials">
+                   <div class="socialbox">
+                      <a target="_blank" href="https://www.linkedin.com/in/janith-d-alwis-68162a214/"><i class="fa fa-linkedin"></i></a>
+                      <a target="_blank" href="https://www.instagram.com/janith.dalwis/"><i class="fa fa-instagram"></i></a>
+                      <a target="_blank" href="https://github.com/jdalwis"><i class="fa fa-github"></i></a>
+                      <a target="_blank" href= "https://medium.com/@janithdalwis"><i class="fa fa-medium"></i></a>
+                   </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="main">
+            <div class="toppanel">
+                <button class="openbtn" onclick="openNav()">☰  </button>
+                
+                <div class="button-container">
+                  <div class="minimize-button">
+                      <span>
+                          <img src="images/icons8-subtract-24.png" alt="Minimize Window Button">
+                      </span>
+                  </div>
+                  <div class="enlarge-button">
+                      <span>
+                          <img src="images/icons8-maximize-window-24.png" alt="Maximize Window Button">
+                      </span>
+                  </div>
+                  <div class="close-button2">
+                      <span>
+                          <img src="images/icons8-close-24.png" id="closeImage" style="cursor: pointer;" alt="Close Window Button">
+                      </span>
+                  </div>
+                  
+                </div>
+            </div>
+        
+        <div id="myDIV"  class="code-block">
+          <pre style="display: inline-block">
+          <code id="home" class="green-txt-font" style="display: table; font-size: 4.2vw; margin-top: -10px">I'M JANITH D'ALWIS.</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -20px">Welcome to my Terminal.</code>
+          <code></code>
+          <code class="green-txt-font" style="font-size: 1.8vw; margin-top: -10px">Cybersecurity. Artificial Intelligence. Technology.</code>
+          <code class="mobile-res-font"  style="color: white; font-size: 1.2vw; font-style: italic; margin-top: -10px">View my <em><span style="color: #6cef55;">projects</em></span>, <em><span style="color: #6cef55;">certificates</em></span>, and<a href="https://medium.com/@janithdalwis" target="_blank" class="blog-button-link"> <button class="pagebutton green-txt-font">blog</button></a>, or send me an email at <em><span style="color: #6cef55;">jdalwis@purdue.edu</em>.</span></code>
+          <code></code>
+          <code></code>
+          <code></code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.2vw; font-style: italic; margin-top: -15px">Want to learn more? <span style="color: #6cef55;">Scroll down</span> or use the <span style="color: #6cef55;">'Table of Contents'</span> menu on your left.</code>
+          <hr color="#6cef55" width="520%">
+          <code id="about" class="green-txt-font" style="font-size: 3vw; margin-top: -10px">ABOUT ME</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -20px">'About Me' pages can be dull. Let's make it fun and do a quick round of facts.</code>
+          <code></code>
+          <code class="mobile-res-font" style="font-size: 1.4vw; margin-top: -10px; font-style: italic;">My Current Tech Journey</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-school-50.png" class="iconsContainer"  <span style="color: #6cef55; font-style: italic"> Cybersecurity + AI</span> at Purdue University.</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-coder-50.png" class="iconsContainer"   <span style="color: #6cef55; font-style: italic"> Cyber-Tech Specialist</span> at Super Purposes.</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-internship-50.png" class="iconsContainer"   <span style="color: #6cef55; font-style: italic"> Pursuing</span> industry certificates.</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-design-50.png" class="iconsContainer"  <span style="color: #6cef55; font-style: italic"> Working on</span> projects outside of class.</code>
+          <code></code>
+          <code class="green-txt-font" style="font-size: 1.4vw; margin-top: -10px; font-style: italic;">Random Facts About Me</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-earbud-headphones-50.png" class="iconsContainer" > Like to listen to the Beatles, Post Malone, and Billy Joel. </code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-skyscrapers-50.png" class="iconsContainer"   style="color: #6cef55; font-style: italic"> Lives in Cerritos, California.</span></code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-design-50.png" class="iconsContainer" > Believes in this tagline: “Think Different”.</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.1vw; font-style: italic; margin-top: -10px"><img src="images/icons8-radio-50.png" class="iconsContainer" > Top 3 favorite movies are Interstellar, Fight Club, and The Pianist.</code>
+
+          <hr color="#6cef55" width="520%">
+          <code id="projects" class="green-txt-font" style="font-size: 3vw; margin-top: 15px">PROJECTS</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -20px">Here are my projects.</code>
+          <div class="projectbox-container">
+            <a href="https://drive.google.com/file/d/1P2EZEh2COxHghdC98S8e3bUsAV5uirE0/view?usp=sharing" target="_blank" class="certboxes" id="cert1" style="display: block; text-decoration: none;">
+              <br>
+              <br>
+              Raspberry Pi 
+              <br>
+              Cloud Camera
+            </a>
+            <a href="passwordgenerator.html" target="_blank" class="certboxes" id="cert2" style="display: block; text-decoration: none;">
+              <br>
+              <br>
+              Web-Based Javascript
+              <br>
+              Password Generator
+            </a>
+            <a href="https://myalbum.com/album/2vWteM3BPpG7y4/" target="_blank" class="certboxes" id="cert3" style="display: block; text-decoration: none;">
+              <br>
+              <br>
+              Cityline Church
+              <br>
+              Drum Enclosure
+            </a>
+          </div>
+          <hr color="#6cef55" width="520%">
+          <code id="research" class="green-txt-font" style="font-size: 3vw; margin-top: 15px">RESEARCH</code>
+          <code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -15px">Here's some of the reports I've made independently.</code>
+          <div class="projectbox-container">
+            <a href="https://drive.google.com/file/d/137C1kvCOpMB1rUbb5nmwrGYEjtXoPX7F/view" target="_blank" class="certboxes" id="cert1" style="display: block; text-decoration: none;">
+                  <br> 
+                  <br>
+                  Project
+                  <br> 
+                  Greenleaf
+            </a>
+            <a href="" target="_blank" class="certboxes" id="cert2" style="display: block; text-decoration: none;">
+              <br> 
+              <br>
+              Securing the Future
+              <br> 
+              (Coming Soon)
+            </a>
+            <a href="" target="_blank" class="certboxes" id="cert3" style="display: block; text-decoration: none;">
+              <br>
+              <br> 
+              Coming
+              <br>
+              Soon
+            </a>
+            
+          </div>
+          <br>
+        <hr color="#6cef55" width="520%">
+        <code id="certificates" class="green-txt-font" style="font-size: 3vw; margin-top: 15px">CERTIFICATES</code>
+        <code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -20px">Here are some certificates I've received thus far.</code>
+          <div class="projectbox-container">
+  <a href="https://learn.microsoft.com/api/credentials/share/en-us/JanithRandhilDAlwis-1841/D441E68FF9805F41?sharingId=6BECB5F91C0EC6E8" target="_blank" class="certboxes" id="cert1" style="display: block; text-decoration: none;">
+        <br> 
+        <br>
+        Microsoft
+        <br> 
+        SC-900 
+  </a>
+  <a href="https://www.credly.com/badges/70704528-4e51-4599-a2d4-eb1e6a8981d3/public_url" target="_blank" class="certboxes" id="cert2" style="display: block; text-decoration: none;">
+    <br> 
+    <br>
+    Google CSEC 
+    <br> 
+    Professional
+  </a>
+  <a href="errorpage.html" target="_blank" class="certboxes" id="cert3" style="display: block; text-decoration: none;">
+    <br> 
+    <br>
+    Coming
+    <br>
+    Soon
+  </a>
+</div>
+<br>
+<hr color="#6cef55" width="520%">
+<code id="blog" class="green-txt-font" style="font-size: 3vw; margin-top: 15px">BLOG</code>
+<code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -15px">Here are my blogs related to science and technology. Visit my<a href="https://medium.com/@janithdalwis" target="_blank" class="blog-button-link"> <button class="pagebutton green-txt-font">blog</button> </a>for more posts.</code>
+<div class="projectbox-container">
+  <a href="https://medium.com/@janithdalwis/the-perfect-password-52c549aae687" target="_blank" class="certboxes" id="cert1" style="display: block; text-decoration: none;">
+        <br> 
+        <br>
+        The Perfect
+        <br> 
+        Password
+  </a>
+  <a href="https://medium.com/@janithdalwis" target="_blank" class="certboxes" id="cert2" style="display: block; text-decoration: none;">
+    <br> 
+    <br>
+    Coming
+    <br> 
+    Soon
+  </a>
+  <a href="https://medium.com/@janithdalwis" target="_blank" class="certboxes" id="cert3" style="display: block; text-decoration: none;">
+    <br>
+    <br> 
+    Coming
+    <br>
+    Soon
+  </a>
+  
+</div>
+<br>
+<hr color="#6cef55" width="520%">
+<code id="resume" class="green-txt-font" style="font-size: 3vw; margin-top: 15px">RESUME</code>
+<code class="mobile-res-font" style="color: white; font-size: 1.3vw; font-style: italic; margin-top: -15px">Find a snapshot of my career below.</code>
+<a href="images/Janith's Resume CURRENT.pdf" class="download-btn" download>Download Resume</a>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<footer>
+  © 2024 Janith D'Alwis. All Rights Reserved.
+</footer>
+
+</body>
+</html> 
+
+<script src="script.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script>
+var loader = document.getElementByID("preloader");
+
+window.addEventListener("load", function(){
+  loader.style.display = "none"; 
+})
+
+var menuWidth ="0%";
+window.onload = function() {
+   
+   if(window.innerWidth <= 767){
+    
+const element = document.getElementById("myDIV");
+  if (element.classNamxe == "code-block") { 
+    element.style.overflowX = "hidden";
+  }
+
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      menuWidth="100%";
+
+    }
+    else{
+       
+       document.getElementById("mySidebar").style.width = "25%";
+       document.getElementById("main").style.marginLeft = "25%";
+       menuWidth="25%";
+
+ }
+ };
+
+window.onresize = function() {
+          
+
+     if(window.innerWidth <= 767){
+        const element = document.getElementById("myDIV");
+      if (element.className == "code-block") { 
+       element.style.overflowX = "hidden";
+      }
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          menuWidth="100%";
+      }
+       else{
+ 
+           document.getElementById("mySidebar").style.width = "25%";
+           document.getElementById("main").style.marginLeft = "25%";
+           menuWidth="25%";
+
+       }
+
+
+};
+
+function openNav() {
+    var sidebar = document.getElementById("mySidebar");
+    var mainContent = document.getElementById("main");
+    if (sidebar && mainContent) {
+        sidebar.style.width = menuWidth || "250px"; 
+        mainContent.style.marginLeft = menuWidth || "250px"; 
+    } else {
+        console.error('Element IDs "mySidebar" or "main" not found.');
+    }
+}
+
+
+
+function closeNav(from) {
+ console.log(from);
+ console.log(window.innerWidth);
+
+ document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+ 
+}
+
+window.addEventListener('scroll', function() {
+  var logo = document.getElementById('logo');
+  var logoHeight = logo.clientHeight;
+  var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollY > logoHeight) {
+    logo.style.display = 'none';
+  } else {
+    logo.style.display = 'block';
+  }
+});
+
+
+</script>
+
+<script>
+  window.addEventListener("load", function() {
+    setTimeout(function() {
+      var loader = document.getElementById("preloader");
+      if(loader) {
+        loader.style.display = "none";
+      }
+    }, 3000); 
+  });
+  </script>
+
+<script>
+  const closeImage = document.getElementById('closeImage');
+  
+  closeImage.addEventListener('click', () => {
+      window.close();
+  });
+</script>
+  
+
+

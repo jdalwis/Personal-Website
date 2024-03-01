@@ -1,0 +1,134 @@
+body {
+  font-family: "Courier New", monospace;
+  background-color: #080404;
+  background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
+  height: 100vh;
+  font-family: "Courier New", monospace;
+  color: white;
+  text-shadow: 0 0 5px #c8c8c8;
+  overflow: hidden;
+}
+
+#interactive-terminal {
+  color: white;
+  padding: 20px;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+#interactive-terminal input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 0 5px #c8c8c8;
+}
+
+#interactive-terminal input:focus {
+  outline: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 0.5s linear infinite;
+}
+
+.success-message {
+  color: white;
+  display: inline;
+}
+
+::selection {
+  background: #c3eebb;
+  text-shadow: none;
+}
+
+a {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+/* Container holding your terminal text and links */
+.terminal-container {
+  position: relative;
+}
+
+/* Scan lines effect */
+.terminal-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none; /* This is crucial for making links clickable */
+}
+
+#user-input::before {
+  content: ">";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#user-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white; /* Adjust color to match your terminal */
+  font-family: monospace; /* Adjust font to match your terminal */
+}
+
+.scanlines {
+  /* Size of the element for demonstration; adjust as needed */
+  width: 100%;
+  height: 1500px;
+
+  /* Scan lines effect with thicker lines */
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    /* Increase for more spacing */ rgba(0, 0, 0, 0.1) 2px,
+    /* Start of thicker line */ rgba(0, 0, 0, 0.1) 4px /* End of thicker line */
+  );
+
+  /* Ensure the element's content also gets the scan lines overlay */
+  position: relative;
+  z-index: 1;
+}
+
+/* Optionally, ensure the content inside your element is above the scan lines */
+.scanlines > * {
+  position: relative;
+  z-index: 2;
+}
